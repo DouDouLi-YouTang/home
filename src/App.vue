@@ -109,14 +109,16 @@ onMounted(() => {
   const styleTitle1 = "font-size: 20px;font-weight: 600;color: rgb(244,167,89);";
   const styleTitle2 = "font-size:12px;color: rgb(244,167,89);";
   const styleContent = "color: rgb(30,152,255);";
-  const title1 = "無名の主页";
+  const title1 = "兜兜里有糖の主页";
   const title2 = `
- _____ __  __  _______     ____     __
-|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
-  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ /
-  | | | |\\/| |\\___ \\  \\   /    \\   /
- _| |_| |  | |____) |  | |      | |
-|_____|_|  |_|_____/   |_|      |_|`;
+      _       _   _           _
+     | |     | | | |         | |
+   __| |   __| | | |  _   _  | |_
+  / _\` |  / _\` | | | | | | | | __|
+ | (_| | | (_| | | | | |_| | | |_
+  \\__,_|  \\__,_| |_|  \\__, |  \\__|
+                       __/ |
+                      |___/`;
   const content = `\n\n版本: ${config.version}\n主页: ${config.home}\nGithub: ${config.github}`;
   console.info(`%c${title1} %c${title2} %c${content}`, styleTitle1, styleTitle2, styleContent);
 });
@@ -137,11 +139,13 @@ onBeforeUnmount(() => {
   transition: transform 0.3s;
   animation: fade-blur-main-in 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   animation-delay: 0.5s;
+
   .container {
     width: 100%;
     height: 100vh;
     margin: 0 auto;
     padding: 0 0.5vw;
+
     .all {
       width: 100%;
       height: 100%;
@@ -151,6 +155,7 @@ onBeforeUnmount(() => {
       justify-content: center;
       align-items: center;
     }
+
     .more {
       position: fixed;
       top: 0;
@@ -162,10 +167,12 @@ onBeforeUnmount(() => {
       z-index: 2;
       animation: fade 0.5s;
     }
+
     @media (max-width: 1200px) {
       padding: 0 2vw;
     }
   }
+
   .menu {
     position: absolute;
     display: flex;
@@ -180,25 +187,31 @@ onBeforeUnmount(() => {
     border-radius: 6px;
     transition: transform 0.3s;
     animation: fade 0.5s;
+
     &:active {
       transform: scale(0.95);
     }
+
     .i-icon {
       transform: translateY(2px);
     }
+
     @media (min-width: 721px) {
       display: none;
     }
   }
+
   @media (max-height: 720px) {
     overflow-y: auto;
     overflow-x: hidden;
     .container {
       height: 721px;
+
       .more {
         height: 721px;
         width: calc(100% + 6px);
       }
+
       @media (min-width: 391px) {
         // w 1201px ~ max
         padding-left: 0.7vw;
